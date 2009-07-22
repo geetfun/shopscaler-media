@@ -1,0 +1,20 @@
+%h1== Showing Picture #{@picture.id}
+%p
+  File details:
+  %ul
+    %li== File: #{@picture.source_file_name}
+    %li== Content Type: #{@picture.source_content_type}
+    %li== File size: #{@picture.source_file_size} bytes
+    %li== State: #{@picture.state}
+%p
+  Original
+  %br
+  = image_tag @picture.url
+%p
+  Bigger
+  %br
+  / # = image_tag @picture.url(:bigger)
+%p
+  Avatar
+  %br
+  = image_tag @picture.url(:avatar)

@@ -48,4 +48,18 @@ class Picture < ActiveRecord::Base
       transitions :to => :ready, :from => [:pending]
     end
 
+  # *********************************************************************************************************************
+  # ~ Utility Methods
+  # *********************************************************************************************************************
+  public
+    def url(style = :original)
+      if self.ready?
+        source.url(style)
+      elsif ( style==:original || style==:avatar )
+        source.url(style)
+      else
+        raise "SHIT"
+      end
+    end
+
 end
