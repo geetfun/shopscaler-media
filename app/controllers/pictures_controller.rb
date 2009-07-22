@@ -11,7 +11,7 @@ class PicturesController < ApplicationController
   end
   
   def show
-    
+    @picture = Picture.find(params[:id])
   end
   
   def create
@@ -26,7 +26,10 @@ class PicturesController < ApplicationController
   end
   
   def destroy
-    
+    @picture = Picture.find(params[:id])
+    @picture.destroy
+    flash[:success] = "Picture #{@picture.id} deleted"
+    redirect_to :action => :index
   end
   
 end

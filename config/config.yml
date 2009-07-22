@@ -1,0 +1,6 @@
+development:
+  image_magick: /opt/local/bin
+test:
+  image_magick: /opt/local/bin
+production:
+  image_magick: /opt/local/bin
