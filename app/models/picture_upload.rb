@@ -1,3 +1,16 @@
+# == Schema Information
+# Schema version: 20090722035745
+#
+# Table name: pictures
+#
+#  id                  :integer         not null, primary key
+#  source_file_name    :string(255)
+#  source_content_type :string(255)
+#  source_file_size    :integer
+#  source_updated_at   :datetime
+#  state               :string(255)
+#
+
 # *********************************************************************************************************************
 # ~ Picture Upload
 # 
@@ -20,6 +33,9 @@ class PictureUpload < Picture
       :styles => { :avatar => '50x50#' },
       :storage => :filesystem
     )
+    
+    # Validations
+    validates_attachment_presence :source
     
     # Call backs
     after_create :create_all_styles

@@ -7,9 +7,9 @@ RAILS_GEM_VERSION = '2.3.3' unless defined? RAILS_GEM_VERSION
 require File.join(File.dirname(__FILE__), 'boot')
 
 Rails::Initializer.run do |config|
+  config.gem "haml"
   config.gem "pg"
   config.gem "aws-s3", :lib => "aws/s3"
-  config.gem "collectiveidea-delayed_job", :lib => "delayed_job"
   config.gem "thoughtbot-paperclip", :lib => "paperclip"
   config.gem "rubyist-aasm", :lib => "aasm"
   config.time_zone = 'UTC'

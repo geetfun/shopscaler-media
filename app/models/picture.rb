@@ -1,10 +1,9 @@
 # == Schema Information
-# Schema version: 20090722032724
+# Schema version: 20090722035745
 #
 # Table name: pictures
 #
 #  id                  :integer         not null, primary key
-#  owner_id            :integer
 #  source_file_name    :string(255)
 #  source_content_type :string(255)
 #  source_file_size    :integer

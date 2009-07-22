@@ -1,0 +1,10 @@
+%h1 Upload a new picture
+%p
+  = error_messages_for "picture"
+%p
+  - form_for :picture_upload, @picture, :url => pictures_path, :html => { :multipart => true } do |f|
+    == You can upload jpeg, gif, or png
+    %br
+    = f.file_field :source
+    %br
+    = submit_tag "Upload"
