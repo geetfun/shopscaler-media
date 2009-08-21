@@ -42,7 +42,7 @@ class PictureUpload < Picture
     
   private
     def create_all_styles
-      # TODO
+      Delayed::Job.enqueue PictureJob.new(self.id)
     end
   
 end

@@ -13,7 +13,27 @@
 %p
   Bigger
   %br
-  / # = image_tag @picture.url(:bigger)
+  = image_tag @picture.url(:bigger)
+%p
+  Big
+  %br
+  = image_tag @picture.url(:big)
+%p
+  Album
+  %br
+  = image_tag @picture.url(:album)
+%p
+  Album Preview
+  %br
+  = image_tag @picture.url(:album_preview)
+%p
+  Album Folder
+  %br
+  = image_tag @picture.url(:album_folder)
+%p
+  Profile
+  %br
+  = image_tag @picture.url(:profile)
 %p
   Avatar
   %br

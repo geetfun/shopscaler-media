@@ -10,7 +10,7 @@ Rails::Initializer.run do |config|
   config.gem "haml"
   config.gem "pg"
   config.gem "aws-s3", :lib => "aws/s3"
-  config.gem "thoughtbot-paperclip", :lib => "paperclip"
+  config.gem "thoughtbot-paperclip", :lib => "paperclip", :version => "2.3.1"
   config.gem "rubyist-aasm", :lib => "aasm"
   config.time_zone = 'UTC'
 end
