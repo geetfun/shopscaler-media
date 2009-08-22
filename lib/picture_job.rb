@@ -1,6 +1,6 @@
 class PictureJob < Struct.new(:id)
   def perform
-    p = Picture.find(id)
+    p = ::Pictures::Source.find(id)
     if p.source.reprocess!
       p.converted!
     end

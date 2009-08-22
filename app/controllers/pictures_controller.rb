@@ -1,21 +1,19 @@
 class PicturesController < ApplicationController
   
-  layout "default"
-  
   def index
-    @pictures = Picture.all
+    @pictures = ::Pictures::Source.all
   end
   
   def new
-    @picture = PictureUpload.new
+    @picture = ::Pictures::Upload.new
   end
   
   def show
-    @picture = Picture.find(params[:id])
+    @picture = ::Pictures::Source.find(params[:id])
   end
   
   def create
-    @picture = PictureUpload.new(params[:picture_upload])
+    @picture = ::Pictures::Upload.new(params[:picture])
     if @picture.save
       flash[:success] = "Successfully saved picture"
       redirect_to :action => :index
